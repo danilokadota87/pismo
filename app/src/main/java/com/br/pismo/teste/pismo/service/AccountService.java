@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AccountService {
@@ -38,7 +39,4 @@ public class AccountService {
 		return ResponseEntity.ok(new AccountResponse(accountSave));
 	}
 	
-	public List<Account> getAll() {
-		return accountRepository.findAll();
-	}
 }

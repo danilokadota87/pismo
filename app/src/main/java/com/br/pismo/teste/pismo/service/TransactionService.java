@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -51,7 +50,4 @@ public class TransactionService {
 		return ResponseEntity.ok(new TransactionResponse(transaction));
 	}
 	
-	public List<Transaction> getAll() {
-		return transactionRepository.findAll();
-	}
 }

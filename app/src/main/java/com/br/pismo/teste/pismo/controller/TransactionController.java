@@ -37,9 +37,5 @@ public class TransactionController {
 		return transactionService.create(transactionDTO);
 	}
 	
-	@GetMapping
-	public List<Transaction> getAll() {
-		return transactionService.getAll();
-	}
 	
 }
