@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class Transaction {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "TRANSACTION_ID")
 	private Long id;
 	
