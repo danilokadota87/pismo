@@ -4,11 +4,13 @@ package com.br.pismo.teste.pismo.service;
 import com.br.pismo.teste.pismo.dto.AccountDTO;
 import com.br.pismo.teste.pismo.entity.Account;
 import com.br.pismo.teste.pismo.repository.AccountRepository;
+import com.br.pismo.teste.pismo.response.AccountResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -32,6 +34,11 @@ public class AccountService {
 		if (optionalAccount.isPresent()) return new ResponseEntity<>("Document exist", HttpStatus.BAD_REQUEST);
 		Account account = new Account();
 		account.setDocumentNumber(accountDTO.getDocumentNumber());
-		return ResponseEntity.ok(accountRepository.save(account));
+		Account accountSave = accountRepository.save(account);
+		return ResponseEntity.ok(new AccountResponse(accountSave));
+	}
+	
+	public List<Account> getAll() {
+		return accountRepository.findAll();
 	}
 }

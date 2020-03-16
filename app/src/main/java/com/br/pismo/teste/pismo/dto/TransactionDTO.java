@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 public class TransactionDTO {
 	
 	
-	private Long id;
 	private Long accountId;
 	private Long operationTypesId;
 	private BigDecimal amount;

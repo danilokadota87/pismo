@@ -8,12 +8,14 @@ import com.br.pismo.teste.pismo.entity.Transaction;
 import com.br.pismo.teste.pismo.repository.AccountRepository;
 import com.br.pismo.teste.pismo.repository.OperationTypeRepository;
 import com.br.pismo.teste.pismo.repository.TransactionRepository;
+import com.br.pismo.teste.pismo.response.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,7 +48,10 @@ public class TransactionService {
 		transaction.setLocalDateTime(LocalDateTime.now());
 		transaction.setAmount(operationTypes.get().isCreditType() ? transactionDTO.getAmount() : transactionDTO.getAmount().negate());
 		transactionRepository.save(transaction);
-		return ResponseEntity.ok(transaction);
+		return ResponseEntity.ok(new TransactionResponse(transaction));
 	}
 	
+	public List<Transaction> getAll() {
+		return transactionRepository.findAll();
+	}
 }
