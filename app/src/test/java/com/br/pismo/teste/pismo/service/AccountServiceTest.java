@@ -28,8 +28,11 @@ public class AccountServiceTest {
 	@Test
 	public void testCreateAccount() {
 		AccountDTO accountDTO = createAccountDTO();
+		Account account = new Account();
+		account.setDocumentNumber(1L);
+		account.setId(1L);
 		when(accountRepository.findByDocumentNumber(accountDTO.getDocumentNumber())).thenReturn(Optional.empty());
-		when(accountRepository.save(any())).thenReturn(any());
+		when(accountRepository.save(any())).thenReturn(account);
 		accountService.create(accountDTO);
 		verify(accountRepository, times(1)).findByDocumentNumber(accountDTO.getDocumentNumber());
 		verify(accountRepository, times(1)).save(any());
@@ -65,7 +68,6 @@ public class AccountServiceTest {
 	private AccountDTO createAccountDTO() {
 		AccountDTO accountDTO = new AccountDTO();
 		accountDTO.setDocumentNumber(123L);
-		accountDTO.setId(1L);
 		return accountDTO;
 	}
 }

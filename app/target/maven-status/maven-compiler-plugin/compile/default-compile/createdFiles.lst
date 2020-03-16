@@ -1,8 +1,10 @@
 com/br/pismo/teste/pismo/dto/TransactionDTO.class
 com/br/pismo/teste/pismo/repository/OperationTypeRepository.class
+com/br/pismo/teste/pismo/response/AccountResponse.class
 com/br/pismo/teste/pismo/service/TransactionService.class
 com/br/pismo/teste/pismo/entity/Account.class
 com/br/pismo/teste/pismo/service/AccountService.class
+com/br/pismo/teste/pismo/response/TransactionResponse.class
 com/br/pismo/teste/pismo/controller/AccountController.class
 com/br/pismo/teste/pismo/repository/AccountRepository.class
 com/br/pismo/teste/pismo/PismoApplication.class

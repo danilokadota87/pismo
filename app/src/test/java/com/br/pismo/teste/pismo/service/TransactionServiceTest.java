@@ -1,6 +1,5 @@
 package com.br.pismo.teste.pismo.service;
 
-import com.br.pismo.teste.pismo.dto.AccountDTO;
 import com.br.pismo.teste.pismo.dto.TransactionDTO;
 import com.br.pismo.teste.pismo.entity.Account;
 import com.br.pismo.teste.pismo.entity.OperationTypes;
@@ -84,10 +83,4 @@ public class TransactionServiceTest {
 	}
 	
 	
-	private AccountDTO createAccountDTO() {
-		AccountDTO accountDTO = new AccountDTO();
-		accountDTO.setDocumentNumber(123L);
-		accountDTO.setId(1L);
-		return accountDTO;
-	}
 }
