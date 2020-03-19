@@ -3,6 +3,7 @@ package com.br.pismo.teste.pismo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -15,5 +16,8 @@ public class Account {
 	private Long id;
 	
 	@Column(name = "DOCUMENT_NUMBER")
-	private Long documentNumber;
+	private String documentNumber;
+	
+	@Column(name = "AVAILABLE_CREDIT_LIMIT",nullable = false)
+	private BigDecimal availableCreditLimit;
 }
